@@ -1,0 +1,21 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        """
+        create a hashmap with the number and the index of it
+        if the difference of the current number with the target is in the hashmap, then return those indices
+        """
+
+        indices = {}
+
+        for i, num in enumerate(nums):
+            indices[num] = i
+
+        for num, i in indices.values():
+            diff = target - num
+            if diff in indices:
+                return [indices[diff], i]
+        return 0
+      
+    
+        
